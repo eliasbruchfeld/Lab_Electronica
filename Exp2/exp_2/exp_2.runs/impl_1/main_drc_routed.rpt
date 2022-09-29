@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Wed Sep 28 14:41:54 2022
+| Date         : Wed Sep 28 15:45:42 2022
 | Host         : LAPTOP-IBLAAAVM running 64-bit major release  (build 9200)
 | Command      : report_drc -file main_drc_routed.rpt -pb main_drc_routed.pb -rpx main_drc_routed.rpx
 | Design       : main
@@ -24,48 +24,12 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 7
-+----------+----------+-------------------+------------+
-| Rule     | Severity | Description       | Violations |
-+----------+----------+-------------------+------------+
-| PDRC-153 | Warning  | Gated clock check | 7          |
-+----------+----------+-------------------+------------+
+             Violations found: 0
++------+----------+-------------+------------+
+| Rule | Severity | Description | Violations |
++------+----------+-------------+------------+
++------+----------+-------------+------------+
 
 2. REPORT DETAILS
 -----------------
-PDRC-153#1 Warning
-Gated clock check  
-Net NC/constant_reg[10]/G0 is a gated clock net sourced by a combinational pin NC/constant_reg[10]/L3_2/O, cell NC/constant_reg[10]/L3_2 (in NC/constant_reg[10] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#2 Warning
-Gated clock check  
-Net NC/constant_reg[11]/G0 is a gated clock net sourced by a combinational pin NC/constant_reg[11]/L3_2/O, cell NC/constant_reg[11]/L3_2 (in NC/constant_reg[11] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#3 Warning
-Gated clock check  
-Net NC/constant_reg[13]/G0 is a gated clock net sourced by a combinational pin NC/constant_reg[13]/L3_2/O, cell NC/constant_reg[13]/L3_2 (in NC/constant_reg[13] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#4 Warning
-Gated clock check  
-Net NC/constant_reg[16]/G0 is a gated clock net sourced by a combinational pin NC/constant_reg[16]/L3_2/O, cell NC/constant_reg[16]/L3_2 (in NC/constant_reg[16] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#5 Warning
-Gated clock check  
-Net NC/constant_reg[19]/G0 is a gated clock net sourced by a combinational pin NC/constant_reg[19]/L3_2/O, cell NC/constant_reg[19]/L3_2 (in NC/constant_reg[19] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#6 Warning
-Gated clock check  
-Net NC/constant_reg[20]_i_1_n_0 is a gated clock net sourced by a combinational pin NC/constant_reg[20]_i_1/O, cell NC/constant_reg[20]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#7 Warning
-Gated clock check  
-Net NC/constant_reg[9]/G0 is a gated clock net sourced by a combinational pin NC/constant_reg[9]/L3_2/O, cell NC/constant_reg[9]/L3_2 (in NC/constant_reg[9] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
 

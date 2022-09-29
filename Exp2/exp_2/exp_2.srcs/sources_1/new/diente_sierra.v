@@ -2,14 +2,14 @@
 
 module diente_sierra(
     input clk,
-    output reg [8:0] contador = 0
+    output reg [9:0] contador = 0
     );
     
     
     always @(posedge clk)
     begin
-        if (contador == 8'd255)
-            contador <= 8'b0;
+        if (contador == 10'd255)
+            contador <= 10'b0;
         else
             contador <= contador + 1;
     end

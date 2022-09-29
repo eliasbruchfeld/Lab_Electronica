@@ -20,10 +20,10 @@ module main(
     
     always @(*)
     begin
-        if (out_DS >= out_EM)
-            JB = 1'b0;
-        else
+        if (out_EM >= out_DS)
             JB = 1'b1;
+        else
+            JB = 1'b0;
     end 
     
     

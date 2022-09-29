@@ -18,8 +18,8 @@ module clock_divider_pwm(
     input Rst,
     output reg Clk_out
     );
-    parameter N = 9;
-    parameter constant = 22'd3200000;
+    parameter N = 5;
+    parameter constant = 4'd8;
     reg [N-1:0] counter = 0;
     
     

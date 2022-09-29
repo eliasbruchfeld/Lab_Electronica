@@ -19,27 +19,27 @@ module clock_divider_2n(
     input [1:0] sw,
     output reg Clk_out
     );
-    parameter N = 22;
-    reg [21:0] constant;
+    parameter N = 10;
+    reg [8:0] constant;
     reg [N-1:0] counter = 0;
     
     always @(*)
     begin
         if (sw == 2'd0)
         begin
-            constant = 22'd64000;
+            constant = 9'd390;
         end
         else if (sw == 2'd1)
         begin
-            constant = 22'd128000;
+            constant = 9'd195;
         end
         else if (sw == 2'd2)
         begin
-            constant = 22'd640000;
+            constant = 9'd39;
         end
         else if (sw == 2'd3)
         begin
-            constant = 22'd1280000;
+            constant = 9'd19;
         end
     end
     

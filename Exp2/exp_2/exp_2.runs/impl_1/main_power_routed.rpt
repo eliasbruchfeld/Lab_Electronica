@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Wed Sep 28 14:41:55 2022
+| Date             : Wed Sep 28 15:45:43 2022
 | Host             : LAPTOP-IBLAAAVM running 64-bit major release  (build 9200)
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.074        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.002        |
+| Dynamic (W)              | 0.003        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.6         |
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      176 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       77 |     20800 |            0.37 |
+| Slice Logic    |    <0.001 |      150 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       68 |     20800 |            0.33 |
 |   F7/F8 Muxes  |    <0.001 |       16 |     32600 |            0.05 |
-|   CARRY4       |    <0.001 |       13 |      8150 |            0.16 |
-|   Register     |    <0.001 |       39 |     41600 |            0.09 |
-|   Others       |     0.000 |       17 |       --- |             --- |
-| Signals        |    <0.001 |       93 |       --- |             --- |
-| I/O            |    <0.001 |        5 |       106 |            4.72 |
+|   Register     |    <0.001 |       32 |     41600 |            0.08 |
+|   CARRY4       |    <0.001 |        4 |      8150 |            0.05 |
+|   Others       |     0.000 |        8 |       --- |             --- |
+| Signals        |    <0.001 |       64 |       --- |             --- |
+| I/O            |     0.001 |        5 |       106 |            4.72 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.074 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
@@ -141,7 +141,7 @@ Table of Contents
 +------+-----------+
 | Name | Power (W) |
 +------+-----------+
-| main |     0.002 |
+| main |     0.003 |
 +------+-----------+
 
 
