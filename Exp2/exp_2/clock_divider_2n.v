@@ -8,10 +8,10 @@
 // Fecha				: 11 de noviembre de 2021
 //-------------------------------------------------
 
-// frecuenca 500 Hz -> clk 128kHz
-// frecuenca 1000 Hz -> clk 256kHz
-// frecuenca 5 kHz -> clk 1.28MHz
-// frecuenca 10 kHz -> clk 2.56MHz
+// frecuenca 440,00 Hz -> LA
+// frecuenca 583,33 Hz -> RE
+// frecuenca 698,46 Hz -> FA
+// frecuenca 880,00 Hz -> LA
 
 module clock_divider_2n(
     input Clk_in,
@@ -27,19 +27,19 @@ module clock_divider_2n(
     begin
         if (sw == 2'd0)
         begin
-            constant = 9'd390;
+            constant = 9'd444;
         end
         else if (sw == 2'd1)
         begin
-            constant = 9'd195;
+            constant = 9'd335;
         end
         else if (sw == 2'd2)
         begin
-            constant = 9'd39;
+            constant = 9'd280;
         end
         else if (sw == 2'd3)
         begin
-            constant = 9'd19;
+            constant = 9'd222;
         end
     end
     
