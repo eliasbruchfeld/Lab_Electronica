@@ -70,6 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 4
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -87,6 +89,8 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 add_files C:/Users/elias/OneDrive/Escritorio/ELIAS/8vo_semestre/Lab_Electronica/Exp2/exp_2/valores_sinusoide.coe
 read_verilog -library xil_defaultlib {
+  C:/Users/elias/OneDrive/Escritorio/ELIAS/8vo_semestre/Lab_Electronica/Exp2/exp_2/BCDtoSeg.v
+  C:/Users/elias/OneDrive/Escritorio/ELIAS/8vo_semestre/Lab_Electronica/Exp2/exp_2/SevenSegController.v
   C:/Users/elias/OneDrive/Escritorio/ELIAS/8vo_semestre/Lab_Electronica/Exp2/exp_2/clock_divider_2n.v
   C:/Users/elias/OneDrive/Escritorio/ELIAS/8vo_semestre/Lab_Electronica/Exp2/exp_2/clock_divider_pwm.v
   C:/Users/elias/OneDrive/Escritorio/ELIAS/8vo_semestre/Lab_Electronica/Exp2/exp_2/exp_2.srcs/sources_1/new/diente_sierra.v
