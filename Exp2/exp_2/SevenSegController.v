@@ -3,11 +3,12 @@
 // NO DISTRIBUIR
 
 
-module SevenSegController(clk, dis_a, dis_b, dis_c, dis_d, seg, an);
+module SevenSegController(clk, dis_a, dis_b, dis_c, dis_d, seg, an,dp);
     input clk;
     input [6:0] dis_a, dis_b, dis_c, dis_d;
     output reg [6:0] seg;
     output reg [3:0] an;
+    output reg dp;
     wire [16:0] clk_max;
     assign clk_max = 17'b1111_0000_1000_00000;
     reg [16:0] clk_counter;
@@ -30,10 +31,12 @@ module SevenSegController(clk, dis_a, dis_b, dis_c, dis_d, seg, an);
             2'b00: begin
                 an = 4'b0111;
                 seg = dis_a; 
+                dp =1;
             end
             2'b01: begin
                 an = 4'b1011;
                 seg = dis_b;
+                dp =1;
             end
             2'b10: begin
                 an = 4'b1101;
@@ -42,13 +45,14 @@ module SevenSegController(clk, dis_a, dis_b, dis_c, dis_d, seg, an);
             2'b11: begin
                 an = 4'b1110;
                 seg = dis_d;
+                dp =0;
             end
             default: begin
                 an = 4'b1111;
                 seg = 7'b111_1111;
+                dp =1;
             end
         endcase
     end
     
-     
 endmodule

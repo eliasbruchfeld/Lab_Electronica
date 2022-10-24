@@ -13,9 +13,9 @@ void loop() {
 
   dig_audio = dig_audio >> 4;
 
-  //Serial1.write(dig_audio); //P3.3
+  Serial1.write(dig_audio); //P3.3
 
-  Serial1.write(9);
+  //Serial1.write(9);
 
   
 

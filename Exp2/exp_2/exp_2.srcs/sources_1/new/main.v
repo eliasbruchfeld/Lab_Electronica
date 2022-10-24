@@ -8,6 +8,7 @@ module main(
     input rst,
     input JB2,
     output reg JB1,
+    output dp,
     output [9:0] LED,
     output [6:0] sseg_ca,
     output [3:0] sseg_an
@@ -40,7 +41,7 @@ module main(
     BCDtoSeg D(coma, dis_d);
     //BCDtoSeg B(rx_data[7:4], dis_b);
     //BCDtoSeg C(rx_data[3:0], dis_a);
-    SevenSegController(Clk, dis_a, dis_b, dis_c, dis_d, sseg_ca, sseg_an);
+    SevenSegController(Clk, dis_a, dis_b, dis_c, dis_d, sseg_ca, sseg_an, dp);
     
     //assign rx_data_10b = {2'b00, rx_data};
     
