@@ -4,6 +4,7 @@
 
 module extraer_memoria(
     input clk,
+    input [6:0] jump,
     output reg [7:0] valor_final
     );
     
@@ -16,9 +17,9 @@ module extraer_memoria(
     
     always @(posedge clk)
     begin
-        if (contador == 8'd127)
+        if (contador >= 8'd127)
             begin
-            contador <= 8'b0;
+            contador <= 8'd127 - contador;
             
             if (etapa == 2'd3)
                 etapa <= 0;
@@ -28,7 +29,7 @@ module extraer_memoria(
             end
             
         else
-            contador <= contador + 1;
+            contador <= contador + jump;
     end
     
     always @(*)
