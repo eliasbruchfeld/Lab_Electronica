@@ -1,5 +1,6 @@
 import numpy  as np
 from matplotlib import pyplot as plt
+import time
 
 A = 128                                                                        # amplitud
 N = 128                                                                        # numero de valores
@@ -15,25 +16,56 @@ with open("valores.txt", 'w')  as val:                                         #
     val.writelines(f_t)                                                        # sobreescribe el archivo
 
 
-num = np.linspace(0, 2*np.pi, 512)
+t = 0
+t_x = []
+
+
 
 y = []
 
-for n in range(4):
-    if n == 0:
-        for i in range(128):
-            y.append(f_tt[i])
 
-    if n == 1:
-        for i in range(128):
-            y.append(f_tt[127-i])
-    if n == 2:
-        for i in range(128):
-            y.append(256 - f_tt[i])
+t_act = time.time()
+t_0 = time.time()
+etapa = 0
+contador = 0
+pos = None
 
-    if n == 3:
-        for i in range(128):
-            y.append(256 - f_tt[127-i])
+
+
+while True:
+    if time.time() - t_act >= 0.01:
+        t_act = time.time()
+
+        if contador > 127:
+            contador = 127 - contador
+            if etapa == 3:
+                etapa = 0
+            else:
+                etapa = etapa  + 1
+        else:
+            contador = contador + 1 ## jump
+
+
+
+
+        if etapa == 0:
+            y.append(f_tt[contador])
+        elif etapa == 1:
+            y.append(f_tt[128 - contador])
+        elif etapa == 2:
+            y.append(255 - f_tt[contador])
+        elif etapa == 3:
+            y.append(255 - f_tt[128 - contador])
+
+    
+    if time.time() - t_0 > 10:
+        break
+
+
+num = np.linspace(0, 2*np.pi, len(y))
+
+
 
 plt.plot(num, y)
 plt.show()
+#print(len(y))

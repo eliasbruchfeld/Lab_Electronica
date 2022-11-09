@@ -13,13 +13,14 @@
 module clock_divider_2n(
     input Clk_in,
     input Rst,
-    output reg Clk_out
+    output Clk_o
     );
     
     // necesito clock de 4k -> diviir en 25k
     parameter constant = 16'd12500; // divide en 12.5k*2
     parameter N = 16; // necesito 9 bits para hacer el 50k
-    
+    reg Clk_out = 0;
+    assign Clk_o = Clk_out;
     // Queda un reloj de 1kHz //
     reg [N-1:0] counter = 0;
     

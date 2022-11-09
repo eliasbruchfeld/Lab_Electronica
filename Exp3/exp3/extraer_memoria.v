@@ -11,9 +11,9 @@ module extraer_memoria(
     reg [7:0] contador, pos;
     reg [1:0] etapa;
     
-    reg [7:0] valor;
+    wire [7:0] valor;
     
-    mem (pos, valor);
+    mem uut1(pos, valor);
     
     always @(posedge clk)
     begin
@@ -21,10 +21,10 @@ module extraer_memoria(
             begin
             contador <= 8'd127 - contador;
             
-            if (etapa == 2'd3)
+            if (etapa >= 2'd3)
                 etapa <= 0;
             else
-                etapa = etapa + 1;
+                etapa <= etapa + 1;
             
             end
             
@@ -32,27 +32,27 @@ module extraer_memoria(
             contador <= contador + jump;
     end
     
-    always @(*)
+    always @(posedge clk)
     begin
-        if (etapa == 2'd0)
+        if (etapa <= 2'd0)
             begin
-            pos = contador;
-            valor_final = valor;
+            pos <= contador;
+            valor_final <= valor;
             end
-        else if (etapa == 2'd1)
+        else if (etapa <= 2'd1)
             begin
-            pos = 127 - contador;
-            valor_final = valor;
+            pos <= 127 - contador;
+            valor_final <= valor;
             end
-        else if (etapa == 2'd2)
+        else if (etapa <= 2'd2)
             begin
-            pos = contador;
-            valor_final = 256 - valor;
+            pos <= contador;
+            valor_final <= 255 - valor;
             end
-        else if (etapa == 2'd3)
+        else if (etapa <= 2'd3)
             begin
-            pos = 127 - contador;
-            valor_final = 256 - valor;
+            pos <= 127 - contador;
+            valor_final <= 255 - valor;
             end
 
         

@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../exp3.gen/sources_1/ip/mem/sim/mem.v" \
+"../../../../clock_divider_2n.v" \
+"../../../../extraer_memoria.v" \
+"../../../../exp3.srcs/sources_1/new/saltos.v" \
+"../../../../exp3.srcs/sources_1/new/main.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
